@@ -1,38 +1,82 @@
-.App {
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #0e6868;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #97f0dd;
+}
+*{
+  background-color: cadetblue;
+}
+h1, h3{
+  color: #fff;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  width: 1000px;
+  justify-content: space-around;
+}
+.item_ul{
+padding-left: 0;
+margin: 20px;
+  width: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 700px;
+  border: 1px solid #0e6868;
+  padding: 10px;
+
+}
+.item_li{
+  margin: 10px;
+ color: #0f3636;;
+  list-style-type: none;
+  font-size: 18px;
+}
+.item_li:hover{
+  cursor: pointer;
+  transform: scale(1,1.5);
+  font-weight: bold;
+  color: #fff;
+
+}
+.PersonInfo{
+
+  margin: 20px;
+  font-size: 20px;
+}
+.PersonInfo img{
+  width: 400px;
+  height:500px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 5px solid #fff;
+}
+.PersonInfo p{
+margin: 10px;
+color: #fff;
+}
+input{
+  border: 1px solid #fff;
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  margin: 10px;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

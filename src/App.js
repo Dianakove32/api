@@ -1,25 +1,62 @@
-import logo from './logo.svg';
 import './App.css';
+import GetInfo from './components/GetInfo';
+import ItemList from './components/ItemList';
+import PersonInfo from './components/PersonInfo';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import React, { Component } from 'react'
+
+
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      info: 1,
+
+    }
+    this.hendleInfo = this.hendleInfo.bind(this)
+
+  }
+
+  hendleInfo(id) {
+    this.setState({
+      info: id
+    })
+
+  }
+  render() {
+
+    return (
+      <div>
+        <h1>The Breaking Bad Characters</h1>
+        <h3>Information received using API</h3>
+        <div className="App">
+
+          <ItemList hendleInfo={this.hendleInfo} />
+          <PersonInfo info={this.state.info} />
+        </div>
+      </div>
+
+    );
+  }
 }
 
-export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+// fetch(urlCharacters)
+// .then((res)=>{
+// return res.json()
+// })
+// .then((body)=>{
+//   console.log('what we have2', body)
+// })
