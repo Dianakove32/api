@@ -7,7 +7,7 @@ import Search from './Search';
 export default class ItemList extends Component {
     constructor() {
         super()
-        //  this.handleSort = this.handleSort.bind(this)
+          this.handleSort = this.handleSort.bind(this)
     }
     getInfo = new GetInfo()
     state = {
@@ -23,15 +23,19 @@ export default class ItemList extends Component {
             })
 
     }
-    // handleSort(characterName) {
-    //     this.setState({
-    //         ...this.state,
-    //         characterforSearch: characterName
-    //     })
-    // }
+    handleSort(characterName) {
+        this.setState({
+            ...this.state,
+            characterforSearch: characterName
+        })
+    }
 
-    renderItems(arr) {
-        return arr.map((person) => {
+    renderItems( ) {
+
+
+        return this.state.peopleList.filter(person=>person.name.includes(this.state.characterforSearch)).map((person) => {
+
+            console.log(this.state.characterforSearch)
             return (
                 <li className="item_li"
 
@@ -53,14 +57,14 @@ export default class ItemList extends Component {
         if (!peopleList) {
             return <Spiner />
         }
-        const items = this.renderItems(peopleList)
+        const items = this.renderItems()
 
         return (
             <div>
 
 
                 <ul className="item_ul">
-                    <Search />
+                    <Search handleSort={this.handleSort} />
 
                     {items}</ul>
             </div>

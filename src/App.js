@@ -7,6 +7,7 @@ import PersonInfo from './components/PersonInfo';
 import React, { Component } from 'react'
 
 
+
 export default class App extends Component {
   constructor() {
     super()
@@ -28,13 +29,15 @@ export default class App extends Component {
 
     return (
       <div>
-        <h1>The Breaking Bad Characters</h1>
+        <h1>The Breaking  Bad Characters</h1>
         <h3>Information received using API</h3>
         <div className="App">
 
           <ItemList hendleInfo={this.hendleInfo} />
           <PersonInfo info={this.state.info} />
+
         </div>
+        <h3>Diana Kovaleva  <span>WildCodeSchool</span> </h3>
       </div>
 
     );
